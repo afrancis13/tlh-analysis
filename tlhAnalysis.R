@@ -11,7 +11,12 @@ library(assertthat)
 
 TRADING_DAYS_PER_YEAR = 256
 
-#################### FUNCTIONS #################### 
+#################### DATA STRUCTURES #################### 
+
+# These are taken from reference documents publicly available
+# on the Internet.
+
+# Queue: http://www.exegetic.biz/blog/2013/11/implementing-a-queue-as-a-reference-class/
 
 Queue <- setRefClass(
   Class = "Queue",
@@ -61,6 +66,8 @@ Queue <- setRefClass(
   )
 )
 
+# Priority Queue: https://www.r-bloggers.com/deriving-a-priority-queue-from-a-plain-vanilla-queue/
+
 PriorityQueue <- setRefClass(
   "PriorityQueue",
   contains = "Queue",
@@ -83,6 +90,8 @@ PriorityQueue <- setRefClass(
       callSuper()
     })
 )
+
+#################### FUNCTIONS #################### 
 
 # An algorithm to print the highest correlated holdings within an index fund.
 # This would be used in something like Direct Indexing (DI), where individual/
